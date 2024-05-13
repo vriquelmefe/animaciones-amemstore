@@ -1,0 +1,108 @@
+/* CSS */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: #a38ebe;
+  grid-template-areas:
+  'navegacion '
+  'header'
+  'productos'
+  'footer ';
+  grid-template-columns: 25% auto;
+  gap: 20px;
+}
+.box {
+  grid-area: navegacion;
+  width: 100%;
+  height: 25vh;
+  position: absolute;
+  background-color: #a38ebe;
+  animation-name: colorear;
+  animation-iteration-count:
+ infinite;
+  animation-duration: 6s;
+  /* Se aplica la animación
+ "example" a la caja */
+ }
+ .logo{
+  height: 180px;
+  border-radius: 20%;
+  padding: .5rem;
+ }
+ @keyframes colorear {
+  from {
+  background-color: #010304;
+  }
+  to {
+  background-color: #312b39c6;
+  }
+ }
+ .header {
+  grid-area: header;
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  & .img-logo-dos{
+    width:70%;
+  }
+ }
+ 
+ .text {
+  position: absolute;
+  font-size: 1em;
+  animation: move 4s ease
+ infinite;
+ }
+ 
+ @keyframes move {
+  0% {
+  transform: translateX(0);
+  transform: rotate(-20deg);
+  }
+  25% {
+  transform: translateX(100px);
+  }
+  50% {
+  transform: translateX(0);
+  transform: rotate(20deg);
+ ;
+  } 75% {
+  transform:
+ translateX(50px);
+  }
+  100% {
+  transform: translateX(0);
+  transform: rotate(-20deg);
+  }
+ }
+ .menu{
+  grid-area: menu;
+  background-color: #010304;
+  color: #a38ebe;
+  width: 100%;
+
+ }
+.productos{
+  width: 100%;
+  text-align: center;
+  margin-top: 2rem;
+  gap: 20px;
+  .card{
+    border: 1px solid black;
+    border-radius: 4px;
+    margin: 1rem;
+    padding-bottom: 1rem;
+
+  }
+  .img-card{
+    width: 50%;
+    border-radius: 50%;
+    padding: 1rem;
+  }
+}
